@@ -35,9 +35,9 @@ var t_t = function t_t(spec) {
                 method();
                 current++;
             } else {
-                _iterator = null;
-                timeout = null;
-                _wrapper = null;
+                _iterator = undefined;
+                timeout = undefined;
+                _wrapper = undefined;
             }
 
             timeout = setTimeout(_wrapper, timer);
