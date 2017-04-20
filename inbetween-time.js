@@ -22,30 +22,28 @@
 */
 "use strict";
 
-var t_t = function t_t(spec) {
-    var current = 0;
-    var timer = spec.timer,
-        count = spec.count,
-        method = spec.method;
+const t_t = ((spec) => {
+    let current = 0; //Keeps track of iteration count.
+    let {timer, count, method} = spec;
 
-
-    var _iterator = function iterator() {
-        var _wrapper = function wrapper() {
-            if (current < count) {
+    let iterator = () => {
+        let wrapper = () => {
+            if(current < count){
                 method();
                 current++;
-            } else {
-                _iterator = undefined;
-                timeout = undefined;
-                _wrapper = undefined;
+            } else{
+                iterator    = undefined;
+                timeout     = undefined;
+                wrapper     = undefined;
             }
 
-            timeout = setTimeout(_wrapper, timer);
-        };
-        var timeout = setTimeout(_wrapper, timer);
+            console.log(timer, current);
+            timeout = setTimeout(wrapper, timer);
+        }
+        let timeout = setTimeout(wrapper, timer);
     };
 
     return Object.freeze({
-        iterator: _iterator
+        iterator
     });
-};
+});
