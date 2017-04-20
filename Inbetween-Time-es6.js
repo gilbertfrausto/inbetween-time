@@ -20,13 +20,15 @@
     *
     *    console.log(ropes.iterator());
 */
-var t_t = ((spec) => {
+"use strict";
+
+const t_t = ((spec) => {
     let current = 0; //Keeps track of iteration count.
     let {timer, count, method} = spec;
 
     let iterator = () => {
         let wrapper = () => {
-            if(current <= count){
+            if(current < count){
                 method();
                 current++;
             } else{
