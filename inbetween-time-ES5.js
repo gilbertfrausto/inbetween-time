@@ -7,45 +7,48 @@
     *   @param count{number} Max number of iterations
     *   @param method{count} Method to be called durring each iteration
     *   @example
-    *
-    *    let repeater = () => {
-    *        console.log('this needs to run three Times!');
-    *    };
-    *
-    *    let ropes = t_t({
-    *        timer: 1000,
-    *        count: 4,
-    *        method: repeater
-    *    });
-    *
-    *    console.log(ropes.iterator());
 */
 "use strict";
-
-var t_t = function t_t(spec) {
-    var current = 0;
-    var timer = spec.timer,
-        count = spec.count,
-        method = spec.method;
-
-
-    var _iterator = function iterator() {
-        var _wrapper = function wrapper() {
-            if (current < count) {
+var t_t = (function (spec) {
+    var current = 0; //Keeps track of iteration count.
+    var timeout;
+    var paused = false;
+    var timer = spec.timer, count = spec.count, method = spec.method;
+    var iterator = function () {
+        var wrapper = function () {
+            if (!paused && current < count) {
                 method();
+                console.log('Iterations:', current);
                 current++;
-            } else {
-                _iterator = undefined;
-                timeout = undefined;
-                _wrapper = undefined;
             }
-
-            timeout = setTimeout(_wrapper, timer);
+            else if (paused) {
+                clearTimeout(timeout);
+                console.log('Iterations pasued');
+            }
+            else {
+                iterator = undefined;
+                timeout = undefined;
+                wrapper = undefined;
+                console.log('Iterations complete');
+            }
+            timeout = setTimeout(wrapper, timer);
         };
-        var timeout = setTimeout(_wrapper, timer);
+        timeout = setTimeout(wrapper, timer);
     };
-
+    var resume = function () {
+        paused = false;
+        iterator();
+    };
+    var wait = function (yieldTime) {
+        paused = true;
+        console.log('Iterations paused via wait');
+        clearTimeout(timeout);
+        setTimeout(function () {
+            resume();
+        }, yieldTime);
+    };
     return Object.freeze({
-        iterator: _iterator
+        iterator: iterator,
+        wait: wait
     });
-};
+});

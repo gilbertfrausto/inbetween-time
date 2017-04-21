@@ -5,45 +5,54 @@
     *   @param spec {Object} timer, count, method.
     *   @param timer{number} Time in ms between each Iteration
     *   @param count{number} Max number of iterations
-    *   @param method{count} Method to be called durring each iteration
+    *   @param method{func} Method to be called durring each iteration
     *   @example
-    *
-    *    let repeater = () => {
-    *        console.log('this needs to run three Times!');
-    *    };
-    *
-    *    let ropes = t_t({
-    *        timer: 1000,
-    *        count: 4,
-    *        method: repeater
-    *    });
-    *
-    *    console.log(ropes.iterator());
 */
+
 "use strict";
 
 const t_t = ((spec) => {
     let current = 0; //Keeps track of iteration count.
+    let timeout;
+    let paused	= false;
     let {timer, count, method} = spec;
 
     let iterator = () => {
         let wrapper = () => {
-            if(current < count){
+            if(!paused && current < count){
                 method();
+                console.log('Iterations:', current);
                 current++;
-            } else{
+            } else if (paused) {
+            	clearTimeout(timeout);
+            	console.log('Iterations pasued');
+            } else {
                 iterator    = undefined;
                 timeout     = undefined;
                 wrapper     = undefined;
+                console.log('Iterations complete');
             }
-
-            console.log(timer, current);
             timeout = setTimeout(wrapper, timer);
         }
-        let timeout = setTimeout(wrapper, timer);
+        timeout = setTimeout(wrapper, timer);
+    };
+    let resume = () => {
+        paused = false;
+        iterator();
     };
 
+    let wait = (yieldTime) => {
+    	paused = true;
+        console.log('Iterations paused via wait');
+        clearTimeout(timeout);
+        setTimeout(() => {
+            resume();
+        }, yieldTime);
+    };
+
+
     return Object.freeze({
-        iterator
+        iterator,
+        wait
     });
 });
