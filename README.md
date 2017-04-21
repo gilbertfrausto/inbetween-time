@@ -12,13 +12,16 @@ Iterator that returns after certain conditions are met.
 /**
     *   Create Inbetween-Time Instance Via Constructor
     *   @param spec {Object} take four properties
-    *       timer{number} Time in ms between each Iteration
-    *       count{number} Max number of iterations
-    *       method{Function} Method to be called during each iteration
+    *   timer {number} Time in ms between each Iteration
+    *   count {number} Max number of iterations
+    *   method {Function} Method to be called during each iteration
     *   @return {Object} iterator, wait
-    *       iterator{function} will call the spec.method property
-    *       wait{Function} take one argument and this is the amount of time the iterator will be stopped in milliseconds
-    *           @param yieldTime{number} amount of time iterator will yield.
+    *
+    *   iterator {function} will call the spec.method property
+    *   @return void
+    *
+    *   wait{Function} take one argument and this is the amount of time the iterator will be stopped in milliseconds
+    *   @param yieldTime {number} amount of time iterator will yield.
     *       
 **/
 
@@ -34,7 +37,7 @@ myInstance.iterator(); // Start iterator
 myInstance.wait(2000);// Pause Iterations
 
 
-// Fuller working example
+// Full working example
 let repeater = () => {
     console.log('this needs to run four Times!');
 };
