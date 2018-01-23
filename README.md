@@ -7,7 +7,7 @@ Iterator that returns after certain conditions are met.
 * await/waitforSeconds/pause -- pause iterations for a certain amount of time
 
 ### Usage
-* https://cdn.rawgit.com/gilbertfrausto/inbetween-time/6b439ace/inbetween-time.js
+https://cdn.rawgit.com/gilbertfrausto/inbetween-time/6b439ace/inbetween-time.js
 
 ### Examples
 
