@@ -6,6 +6,9 @@ Iterator that returns after certain conditions are met.
 
 * await/waitforSeconds/pause -- pause iterations for a certain amount of time
 
+### Usage
+* https://cdn.rawgit.com/gilbertfrausto/inbetween-time/6b439ace/inbetween-time.js
+
 ### Examples
 
 ```javascript
@@ -39,7 +42,7 @@ myInstance.wait(2000);// Pause Iterations
 
 // Full working example
 let repeater = () => {
-    console.log('this needs to run four Times!');
+    console.log(`this needs to run ${count} Times!`);
 };
 
 let ropes = t_t({
