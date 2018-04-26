@@ -12,12 +12,13 @@
 "use strict";
 
 const t_t = ((spec) => {
-    let current = 0; //Keeps track of iteration count.
-    let timeout;
+    
+	let timeout;
+	let current = 0; //Keeps track of iteration count.
     let paused	= false;
-    let {timer, count, method} = spec;
-
-    let iterator = () => {
+	let { timer, count, method } = spec,
+	
+    iterator = () => {
         let wrapper = () => {
             if(!paused && current < count){
                 method();
@@ -35,13 +36,13 @@ const t_t = ((spec) => {
             timeout = setTimeout(wrapper, timer);
         }
         timeout = setTimeout(wrapper, timer);
-    };
-    let resume = () => {
+	};
+	
+    const resume = () => {
         paused = false;
         iterator();
-    };
-
-    let wait = (yieldTime) => {
+    },
+    wait = (yieldTime) => {
     	paused = true;
         console.log('Iterations paused via wait');
         clearTimeout(timeout);
