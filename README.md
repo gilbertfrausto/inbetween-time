@@ -14,17 +14,14 @@ https://cdn.rawgit.com/gilbertfrausto/inbetween-time/6b439ace/inbetween-time.js
 ```javascript
 /**
     *   Create Inbetween-Time Instance Via Constructor
-    *   @param spec {Object} take four properties
-    *   timer {number} Time in ms between each Iteration
-    *   count {number} Max number of iterations
-    *   method {Function} Method to be called during each iteration
-    *   @return {Object} iterator, wait
-    *
-    *   iterator {function} will call the spec.method property
-    *   @return void
-    *
-    *   wait{Function} take one argument and this is the amount of time the iterator will be stopped in milliseconds
-    *   @param yieldTime {number} amount of time iterator will yield.
+    *   @param  {Object} spectake four properties
+		*   @property {Number} timer Time in ms between each Iteration
+		*   @property {Number} count Max number of iterations
+		*   @property {Function} method Method to be called during each iteration
+	* 	@return {Object}
+    	*   @property {Function} iterator will call the spec.method property @return {void}
+    	*   @property {Function} wait take one argument and this is the amount of time the iterator will be stopped in milliseconds
+    	*   @param  {Number} yieldTime  amount of time iterator will yield.
     *       
 **/
 
