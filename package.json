@@ -1,0 +1,23 @@
+{
+  "name": "inbetween-time",
+  "version": "1.0.0",
+  "description": "Iteratior tool Similar to Unity coruotine",
+  "main": "inbetween-time.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilbertfrausto/inbetween-time.git"
+  },
+  "keywords": [
+    "coruotine",
+    "iterator"
+  ],
+  "author": "Gilbert Frausto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gilbertfrausto/inbetween-time/issues"
+  },
+  "homepage": "https://github.com/gilbertfrausto/inbetween-time#readme"
+}

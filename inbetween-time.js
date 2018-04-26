@@ -1,12 +1,12 @@
 /**
-    *   @name Inbetween-Time
-    *   @version 0.01
-    *   @description Inbetween Time is Contructor with an iterator method that is called a certain number of times and stops.
-    *   @param spec {Object} timer, count, method.
-    *   @param timer{number} Time in ms between each Iteration
-    *   @param count{number} Max number of iterations
-    *   @param method{func} Method to be called durring each iteration
-    *   @example
+*   @name Inbetween-Time
+*   @version 0.01
+*   @description Inbetween Time is Contructor with an iterator method that is called a certain number of times and stops.
+*   @param spec {Object} timer, count, method.
+*   @param timer{number} Time in ms between each Iteration
+*   @param count{number} Max number of iterations
+*   @param method{func} Method to be called durring each iteration
+*   @example
 */
 
 "use strict";
