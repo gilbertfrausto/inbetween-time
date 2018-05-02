@@ -1,6 +1,6 @@
 {
   "name": "inbetween-time",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Iteration tool Similar to Unity coruotine",
   "main": "inbetween-time.js",
   "scripts": {
