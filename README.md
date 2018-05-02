@@ -39,7 +39,10 @@ let myInstance = t_t({
     timer: 1000,
     count: 5,
     method: () => {
-        console.log(`Will fire ${myInstance.getCount()} times!, Iteration count ${myInstance.getInterations() + 1}`);
+        console.log(`
+            Will fire ${myInstance.getCount()} times!,
+            Iteration count ${myInstance.getInterations() + 1}
+        `);
     }
 });
 
