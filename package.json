@@ -1,6 +1,6 @@
 {
   "name": "inbetween-time",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "Iteration tool Similar to Unity coruotine",
   "main": "inbetween-time.js",
   "scripts": {
@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/gilbertfrausto/inbetween-time/issues"
   },
+  "readmeFilename": "README.md",
   "homepage": "https://github.com/gilbertfrausto/inbetween-time#readme"
 }

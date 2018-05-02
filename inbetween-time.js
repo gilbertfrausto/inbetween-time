@@ -1,6 +1,6 @@
 /**
 *   @name Inbetween-Time
-*   @version 1.0.1
+*   @version 1.0.2
 *   @description Inbetween Time is Contructor with an iterator method that is called a certain number of times and stops.
 *   @param  {Object} spectake four properties
 *   @property {Number} timer Time in ms between each Iteration
