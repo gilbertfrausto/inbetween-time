@@ -6,7 +6,9 @@ Iteration tool Similar to Unity coruotine
 * await/waitforSeconds/pause -- pause iterations for a certain amount of  time
 
 ### Usage
-https://cdn.rawgit.com/gilbertfrausto/inbetween-time/6b439ace/inbetween-time.js
+```javascript
+npm install inbetween-time
+```
 
 ### Fiddle
 https://jsfiddle.net/e95jh54t/
