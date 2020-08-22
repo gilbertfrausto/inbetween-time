@@ -1,5 +1,5 @@
 # Inbetween-time.js
-Iteration tool Similar to Unity coruotine
+Iteration tool Similar to Unity coroutine
 
 ### Coming
 
@@ -19,14 +19,16 @@ https://github.com/gilbertfrausto/inbetween-time
 ### Examples
 
 ## Inbetween time constructor and instance
-##### constructor t_t({}) takes and Object with these options
+### Options object
+
 | Option | Description |
 | ------ | ----------- |
 | timer  | timer Time in ms between each Iteration. |
 | count  | Max number of iterations. |
 | method | Method to be called during each iteration |
 
-##### Inbetween time  Instance
+### Inbetween time Instance
+
 | Methods | Description |
 | ------ | ----------- |
 | iterator  | will call the method property passed into the constructor @return {void}. |
