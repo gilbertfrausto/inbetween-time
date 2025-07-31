@@ -6,31 +6,45 @@
  * @version 1.0.8
  * @description Inbetween Time is iterator, similar to coroutine
  */
-function t_t(spec) {
+function inBetweenTime(spec) {
 
-  let timeout;
+  let request_id;
   let current = 0; // Keeps track of iteration count.
   let paused = false;
-  let { timer, count, method } = spec,
+  let isCompleted = false;
+  let { timer, count, method, onComplete } = spec;
+  let lastTime = 0;
 
   /**
    * @returns {void}
    */
-  iterator = () => {
-    let wrapper = () => {
-      if (!paused && current < count) {
-        method();
-        current++;
-      } else if (paused) {
-        clearTimeout(timeout);
+  let iterator = () => {
+    let wrapper = (timestamp) => {
+      if (paused) {
+        return;
+      }
+
+      if (!lastTime) {
+        lastTime = timestamp;
+      }
+      const elapsed = timestamp - lastTime;
+
+      if (current < count) {
+        if (elapsed >= timer) {
+          method();
+          current++;
+          lastTime = timestamp;
+        }
+        request_id = requestAnimationFrame(wrapper);
       } else {
+        isCompleted = true;
+        onComplete && onComplete();
         iterator = undefined;
-        timeout = undefined;
+        request_id = undefined;
         wrapper = undefined;
       }
-      timeout = setTimeout(wrapper, timer);
     }
-    timeout = setTimeout(wrapper, timer);
+    request_id = requestAnimationFrame(wrapper);
   };
 
   /**
@@ -39,19 +53,6 @@ function t_t(spec) {
   function resume() {
     paused = false;
     iterator();
-  }
-
-  /**
-   * 
-   * @param {number} yieldTime 
-   */
-  function wait(yieldTime) {
-    paused = true;
-
-    clearTimeout(timeout);
-    setTimeout(() => {
-        resume();
-    }, yieldTime);
   }
 
   /**
@@ -67,7 +68,7 @@ function t_t(spec) {
    */
   function wait(yieldTime) {
     paused = true;
-    clearTimeout(timeout);
+    cancelAnimationFrame(request_id);
     setTimeout(() => {
       resume();
     }, yieldTime);
@@ -88,12 +89,21 @@ function t_t(spec) {
     count = changed;
   }
 
+  /**
+   * @returns {boolean}
+   */
+  function completed() {
+    return isCompleted;
+  }
+
   return Object.freeze({
     iterator,
     wait,
     getCount,
     getInterations,
-    setCount
+    setCount,
+    completed
   });
-
 }
+
+export default inBetweenTime;

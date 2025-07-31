@@ -2,9 +2,9 @@
   "name": "inbetween-time",
   "version": "1.0.8",
   "description": "Iteration tool Similar to Unity coruotine",
-  "main": "inbetween-time.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bun test"
   },
   "repository": {
     "type": "git",
