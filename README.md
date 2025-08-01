@@ -13,6 +13,7 @@ https://jsfiddle.net/e95jh54t/
 https://github.com/gilbertfrausto/inbetween-time
 
 ### Examples
+https://github.com/gilbertfrausto/inbetween-time/examples/index.html
 
 ## Inbetween time constructor and instance
 ### Options object
