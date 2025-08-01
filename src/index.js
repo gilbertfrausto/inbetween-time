@@ -77,7 +77,7 @@ function inBetweenTime(spec) {
   /**
    * @returns {number}
    */
-  function getInterations() {
+  function getIterations() {
     return current;
   }
 
@@ -108,7 +108,7 @@ function inBetweenTime(spec) {
     iterator,
     wait,
     getCount,
-    getInterations,
+    getIterations,
     setCount,
     completed,
     pause,

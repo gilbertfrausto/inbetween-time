@@ -354,7 +354,7 @@
 
     moveRight.iterator();
 
-    // Wolf Animations
+    // WOLF SPRITE ANIMAITONS
     let frame = 1;
     let movePos = 0;
     let left = false;
@@ -421,7 +421,7 @@
     });
 
     wolfEntity.addEventListener('mouseleave', () => {
-      wolfWalk.restart();
+      wolfWalk.resume();
       console.log('start');
     });
 
