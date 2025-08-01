@@ -96,13 +96,23 @@ function inBetweenTime(spec) {
     return isCompleted;
   }
 
+  /**
+   * @returns {void}
+   */
+  function pause() {
+    paused = true;
+    cancelAnimationFrame(request_id);
+  }
+
   return Object.freeze({
     iterator,
     wait,
     getCount,
     getInterations,
     setCount,
-    completed
+    completed,
+    pause,
+    resume
   });
 }
 

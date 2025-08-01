@@ -3,16 +3,26 @@
   "version": "1.0.8",
   "description": "Iteration tool Similar to Unity coruotine",
   "main": "./src/index.js",
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "test": "bun test"
+    "test": "bun test",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gilbertfrausto/inbetween-time.git"
   },
   "keywords": [
-    "coruotine",
-    "iterator"
+    "coroutine",
+    "iterator",
+    "requestAnimationFrame",
+    "animation",
+    "timing",
+    "async"
   ],
   "author": "Gilbert Frausto",
   "license": "MIT",

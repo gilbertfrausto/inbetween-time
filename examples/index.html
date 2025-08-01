@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>inBetweenTime.js Examples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+  
+    h1, h2 {
+      font-family: "Red Hat Display", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    #wolf {
+      position: relative;
+      cursor: pointer;
+    }
+
+    #wolf:hover {
+      animation: animate-selection 1s ease-in-out infinite;
+    }
+    
+    #tail {
+      position: absolute;
+      right: -38%;
+      top: 40%;
+      width: 88%;
+      z-index: -1;
+    }
+
+    @keyframes animate-selection {
+      0% {
+        filter: drop-shadow(0px 0px 0px white);
+      }
+      50% {
+        filter: drop-shadow(2px 14px 6px white);
+      }
+      100% {
+        filter: drop-shadow(0px 0px 0px white);
+      }
+    }
+
+    .walk-1 {width:292px; height:500px; }
+    .walk-1::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 0.08517887563884156% 0.0664451827242525%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-1::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-2 {width:292px; height:500px; }
+    .walk-2::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 0.08517887563884156% 33.35548172757475%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-2::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-3 {width:292px; height:500px; }
+    .walk-3::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 0.08517887563884156% 66.64451827242524%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-3::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-4 {width:292px; height:500px; }
+    .walk-4::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 0.08517887563884156% 99.93355481727575%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-4::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-5 {width:292px; height:500px; }
+    .walk-5::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 25.04258943781942% 0.0664451827242525%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-5::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-6 {width:292px; height:500px; }
+    .walk-6::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 50% 0.0664451827242525%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-6::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-7 {width:292px; height:500px; }
+    .walk-7::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 74.95741056218058% 0.0664451827242525%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-7::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-8 {width:292px; height:500px; }
+    .walk-8::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 99.91482112436115% 0.0664451827242525%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-8::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-9 {width:292px; height:500px; }
+    .walk-9::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 25.04258943781942% 33.35548172757475%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-9::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-10 {width:292px; height:500px; }
+    .walk-10::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 25.04258943781942% 66.64451827242524%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-10::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-11 {width:292px; height:500px; }
+    .walk-11::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 25.04258943781942% 99.93355481727575%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-11::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-12 {width:292px; height:500px; }
+    .walk-12::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 50% 33.35548172757475%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-12::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-13 {width:292px; height:500px; }
+    .walk-13::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 74.95741056218058% 33.35548172757475%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-13::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-14 {width:292px; height:500px; }
+    .walk-14::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 99.91482112436115% 33.35548172757475%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-14::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-15 {width:292px; height:500px; }
+    .walk-15::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 50% 66.64451827242524%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-15::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-16 {width:292px; height:500px; }
+    .walk-16::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 50% 99.93355481727575%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-16::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-17 {width:292px; height:500px; }
+    .walk-17::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 74.95741056218058% 66.64451827242524%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-17::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-18 {width:292px; height:500px; }
+    .walk-18::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 74.95741056218058% 99.93355481727575%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-18::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-19 {width:292px; height:500px; }
+    .walk-19::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 99.91482112436115% 66.64451827242524%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-19::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+    .walk-20 {width:292px; height:500px; }
+    .walk-20::after {content: '\00a0';display: inline-block; width:292px; height:500px; background-position: 99.91482112436115% 99.93355481727575%;background-size: 502.05479452054794% 401%;background-image: url(./images/WALK.png);padding: 0; }
+    div.walk-20::after {width:292px; width:100%;height:0;padding: 0 0 171.23287671232876% 0;}
+
+    .tail-1 {width:340px; height:360px; }
+    .tail-1::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-1::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-2 {width:340px; height:360px; }
+    .tail-2::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-2::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-3 {width:340px; height:360px; }
+    .tail-3::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-3::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-4 {width:340px; height:360px; }
+    .tail-4::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-4::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-5 {width:340px; height:360px; }
+    .tail-5::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-5::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-6 {width:340px; height:360px; }
+    .tail-6::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-6::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-7 {width:340px; height:360px; }
+    .tail-7::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-7::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-8 {width:340px; height:360px; }
+    .tail-8::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-8::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-9 {width:340px; height:360px; }
+    .tail-9::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-9::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-10 {width:340px; height:360px; }
+    .tail-10::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-10::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-11 {width:340px; height:360px; }
+    .tail-11::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-11::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-12 {width:340px; height:360px; }
+    .tail-12::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 0.09216589861751152%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-12::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-13 {width:340px; height:360px; }
+    .tail-13::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-13::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-14 {width:340px; height:360px; }
+    .tail-14::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-14::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-15 {width:340px; height:360px; }
+    .tail-15::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-15::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-16 {width:340px; height:360px; }
+    .tail-16::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-16::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-17 {width:340px; height:360px; }
+    .tail-17::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-17::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-18 {width:340px; height:360px; }
+    .tail-18::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-18::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-19 {width:340px; height:360px; }
+    .tail-19::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-19::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-20 {width:340px; height:360px; }
+    .tail-20::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-20::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-21 {width:340px; height:360px; }
+    .tail-21::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-21::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-22 {width:340px; height:360px; }
+    .tail-22::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-22::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-23 {width:340px; height:360px; }
+    .tail-23::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-23::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-24 {width:340px; height:360px; }
+    .tail-24::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 33.36405529953917%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-24::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-25 {width:340px; height:360px; }
+    .tail-25::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-25::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-26 {width:340px; height:360px; }
+    .tail-26::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-26::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-27 {width:340px; height:360px; }
+    .tail-27::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-27::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-28 {width:340px; height:360px; }
+    .tail-28::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-28::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-29 {width:340px; height:360px; }
+    .tail-29::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-29::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-30 {width:340px; height:360px; }
+    .tail-30::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-30::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-31 {width:340px; height:360px; }
+    .tail-31::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-31::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-32 {width:340px; height:360px; }
+    .tail-32::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-32::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-33 {width:340px; height:360px; }
+    .tail-33::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-33::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-34 {width:340px; height:360px; }
+    .tail-34::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 79.96485061511423% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-34::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-35 {width:340px; height:360px; }
+    .tail-35::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-35::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-36 {width:340px; height:360px; }
+    .tail-36::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 99.94141769185705% 66.63594470046083%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-36::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-37 {width:340px; height:360px; }
+    .tail-37::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-37::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-38 {width:340px; height:360px; }
+    .tail-38::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 0.05858230814294083% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-38::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-39 {width:340px; height:360px; }
+    .tail-39::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-39::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-40 {width:340px; height:360px; }
+    .tail-40::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 20.035149384885763% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-40::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-41 {width:340px; height:360px; }
+    .tail-41::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-41::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-42 {width:340px; height:360px; }
+    .tail-42::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 40.01171646162859% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-42::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-43 {width:340px; height:360px; }
+    .tail-43::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-43::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+    .tail-44 {width:340px; height:360px; }
+    .tail-44::after {content: '\00a0';display: inline-block; width:340px; height:360px; background-position: 59.98828353837141% 99.90783410138249%;background-size: 602.0588235294117% 401.3888888888889%;background-image: url(./images/TAIL.png);padding: 0; }
+    div.tail-44::after {width:340px; width:100%;height:0;padding: 0 0 105.88235294117646% 0;}
+
+  </style>
+</head>
+<body class="bg-gray-950">
+  <main class="p-5">
+    <h1 class="text-3xl py-3 text-black dark:text-white">inBetweenTime.js Examples</h1>
+    <div class="border-b border-gray-900/90"></div>
+
+    <h2 class="py-3  text-black dark:text-white">Simple Animation</h2>
+    <div class="w-60 bg-gray-900/90 rounded-xl">
+      <div id="simple-box" class="box"></div>
+    </div>
+    
+
+    <h2 class="py-3  text-black dark:text-white">Complex Animation</h2>
+    <div class="w-60 bg-gray-900/90 rounded-xl shadow-xl">
+      <div id="complex-box" class="box"></div>
+    </div>
+    
+
+    <h2 class="py-3 text-black dark:text-white">Sprite Sheet Animation</h2>
+    <div id="wolf" class="walk-1">
+      <div id="tail" class="tail-1"></div>
+    </div>
+    <div class="border-b border-gray-900/90"></div>
+  </main>
+
+  <script type="module">
+    import inBetweenTime from '../src/index.js';
+
+    // Simple Animation
+    const simpleBox = document.getElementById('simple-box');
+    let simplePosition = 0;
+    const simpleAnimation = inBetweenTime({
+      timer: 16, // ~60fps
+      count: 200,
+      method: () => {
+        simplePosition++;
+        simpleBox.style.left = simplePosition + 'px';
+      }
+    });
+    simpleAnimation.iterator();
+
+    // Complex Animation
+    const complexBox = document.getElementById('complex-box');
+    let complexPosition = 0;
+    let scale = 1;
+
+    const moveRight = inBetweenTime({
+      timer: 16,
+      count: 100,
+      method: () => {
+        complexPosition++;
+        complexBox.style.left = complexPosition + 'px';
+      },
+      onComplete: () => {
+        grow.iterator();
+      }
+    });
+
+    const grow = inBetweenTime({
+        timer: 16,
+        count: 50,
+        method: () => {
+            scale += 0.01;
+            complexBox.style.transform = `scale(${scale})`;
+        },
+        onComplete: () => {
+            changeColor.iterator();
+        }
+    });
+
+    const changeColor = inBetweenTime({
+        timer: 16,
+        count: 1,
+        method: () => {
+            complexBox.style.backgroundColor = 'red';
+        },
+        onComplete: () => {
+            shrink.iterator();
+        }
+    });
+
+    const shrink = inBetweenTime({
+        timer: 16,
+        count: 50,
+        method: () => {
+            scale -= 0.01;
+            complexBox.style.transform = `scale(${scale})`;
+        },
+        onComplete: () => {
+            moveLeft.iterator();
+        }
+    });
+
+    const moveLeft = inBetweenTime({
+        timer: 16,
+        count: 100,
+        method: () => {
+            complexPosition--;
+            complexBox.style.left = complexPosition + 'px';
+        },
+        onComplete: () => {
+            // Animation complete
+            console.log('Complex animation finished!');
+        }
+    });
+
+    moveRight.iterator();
+
+    // Wolf Animations
+    let frame = 1;
+    let movePos = 0;
+    let left = false;
+    const wolfEntity = document.querySelector('#wolf');
+    const WOLF = {
+      name: 'walk',
+      frames: 20
+    };
+    
+    // WOLF INSTANCE
+    const wolfWalk = inBetweenTime({
+      timer: 18,
+      count: Infinity,
+      method: () => {
+        const { currentFrame, nextFrame, newFrame } = getFrame(frame, WOLF.frames, WOLF.name);
+        frame = newFrame;
+        wolfEntity.classList.remove(currentFrame);
+        wolfEntity.classList.add(nextFrame);
+        
+        if (movePos > 300) {
+          left = true;
+        } else if (movePos <= -150) {
+          left = false;
+        }
+
+        if (left) {
+          movePos--;
+          wolfEntity.style.transform = 'scaleX(1)';
+        } else {
+          movePos++;
+          wolfEntity.style.transform = 'scaleX(-1)';
+        }
+        wolfEntity.style.left = movePos + 'px';
+      }
+    });
+
+    // TAIL INSTANCE
+    let tailFrame = 1;
+    const tailEntity = document.querySelector('#tail');
+    const TAIL = {
+      name: 'tail',
+      frames: 40
+    };
+    
+    const tailSwinging = inBetweenTime({
+      timer: 18,
+      count: Infinity,
+      method: () => {
+        const { currentFrame, nextFrame, newFrame } = getFrame(tailFrame, TAIL.frames, TAIL.name);
+        tailFrame = newFrame;
+        tailEntity.classList.remove(currentFrame);
+        tailEntity.classList.add(nextFrame);
+      }
+    });
+
+    // START BOTH ITERATORS
+    wolfWalk.iterator();
+    tailSwinging.iterator();
+
+    // ADD HOVER EVENTS
+    wolfEntity.addEventListener('mouseenter', () => {
+      wolfWalk.pause();
+      console.log('stop');
+    });
+
+    wolfEntity.addEventListener('mouseleave', () => {
+      wolfWalk.restart();
+      console.log('start');
+    });
+
+    function getFrame(thisFrame, maxFrame, animName) {
+      const currentFrame = `${animName}-${thisFrame}`;
+      const newFrame = (thisFrame === maxFrame) ? 1 : thisFrame += 1;
+      const nextFrame = `${animName}-${newFrame}`;
+      
+      return Object.freeze({
+        currentFrame,
+        nextFrame,
+        newFrame
+      });
+    }
+
+  </script>
+
+</body>
+</html>

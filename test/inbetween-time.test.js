@@ -15,9 +15,7 @@ describe("Inbetween Time", () => {
   const instance = inBetweenTime({
     count: 10,
     timer: 10, // Add timer to make the async behavior more predictable
-    method: () => {
-      console.log('abc');
-    }
+    method: () => {}
   });
   
   test('Should get count', async () => {
@@ -95,4 +93,37 @@ describe("Inbetween Time", () => {
     await new Promise(resolve => setTimeout(resolve, 100));
     expect(instance.completed()).toBe(true);
   });
+
+  test('pause() should stop all iterations', async () => {
+    const instance = inBetweenTime({
+      count: 3,
+      timer: 10,
+      method: () => {}
+    });
+    expect(instance.getInterations()).toBe(0);
+    instance.iterator();
+    instance.pause();
+    const currentCount = instance.getInterations();
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(instance.getInterations()).toBe(currentCount);
+  });
+
+  test('resume() should start iterations again', async () => {
+    const instance = inBetweenTime({
+      count: 3,
+      timer: 10,
+      method: () => {
+        console.log('abc');
+      }
+    });
+    expect(instance.getInterations()).toBe(0);
+    instance.iterator();
+    instance.pause();
+    const currentCount = instance.getInterations();
+    await new Promise(resolve => setTimeout(resolve, 100));
+    instance.resume();
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(instance.getInterations()).toBeGreaterThan(currentCount);
+  });
 });
+
