@@ -13,7 +13,7 @@ https://jsfiddle.net/e95jh54t/
 https://github.com/gilbertfrausto/inbetween-time
 
 ### Examples
-https://github.com/gilbertfrausto/inbetween-time/examples/index.html
+https://github.com/gilbertfrausto/inbetween-time/blob/master/examples/index.html
 
 ## Inbetween time constructor and instance
 ### Options object
@@ -35,7 +35,7 @@ https://github.com/gilbertfrausto/inbetween-time/examples/index.html
 | setCount          | change the amount of iterations set to happen @return {void} |
 | getInterations    |getInterations get the iterations number @return {number} |
 | completed         | returns true if the iterator has finished, otherwise false @return {boolean} |
-| pause             | pauses all iterations indefintly @return {voud} |
+| pause             | pauses all iterations indefintly @return {void} |
 | resume            | restarts iterations @return {void} |
 
 ```javascript
