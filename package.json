@@ -1,8 +1,9 @@
 {
   "name": "inbetween-time",
-  "version": "2.0.1",
-  "description": "Iteration tool Similar to Unity coruotine",
+  "version": "2.1.0",
+  "description": "Iteration tool Similar to Unity coroutine",
   "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "files": [
     "src",
     "LICENSE",

@@ -20,39 +20,38 @@ https://github.com/gilbertfrausto/inbetween-time/blob/master/examples/index.html
 
 | Option | Description |
 | ------ | ----------- |
-| timer  | timer Time in ms between each Iteration. |
+| timer  | Time in ms between each Iteration. |
 | count  | Max number of iterations. |
-| method | Method to be called during each iteration |
+| method | Method to be called for each iteration. |
 | onComplete | A function to be called when all iterations are complete. |
 
 ### Inbetween time Instance
 
-| Methods           | Description |
-| ----------------- | ----------- |
-| iterator          | will call the method property passed into the constructor @return {void}. |
-| wait              |take one argument and this is the amount of time the iterator will be stopped in milliseconds @return {void} |
-| getCount          | get the count of iteration set to happen @return {number} |
-| setCount          | change the amount of iterations set to happen @return {void} |
-| getInterations    |getInterations get the iterations number @return {number} |
-| completed         | returns true if the iterator has finished, otherwise false @return {boolean} |
-| pause             | pauses all iterations indefintly @return {void} |
-| resume            | restarts iterations @return {void} |
+| Method            | Description                                                     | Parameter(s)         | Returns   |
+| ----------------- | --------------------------------------------------------------- | -------------------- | --------- |
+| `iterator()`      | Kicks off the iterations.                                       | _none_               | `void`    |
+| `wait()`          | Pauses the iterator for a specified time in milliseconds.       | `yieldTime` (number) | `void`    |
+| `getCount()`      | Gets the total number of iterations to be performed.            | _none_               | `number`  |
+| `setCount()`      | Changes the total number of iterations.                         | `changed` (number)   | `void`    |
+| `getIterations()` | Gets the current number of completed iterations.                | _none_               | `number`  |
+| `completed()`     | Returns `true` if the iterator has finished, otherwise `false`. | _none_               | `boolean` |
+| `pause()`         | Pauses all iterations until `resume()` is called.               | _none_               | `void`    |
+| `resume()`        | Resumes iterations after being paused.                          | _none_               | `void`    |
 
 ```javascript
 
-let myInstance = t_t({
-    timer: 1000,
-    count: 5,
-    method: () => {
-        console.log(`
-            Will fire ${myInstance.getCount()} times!,
-            Iteration count ${myInstance.getInterations() + 1}
-        `);
-    }
+let myInstance = inBetweenTime({
+	timer: 1000,
+	count: 5,
+	method: () => {
+		console.log(`
+			Will fire ${myInstance.getCount()} times!,
+			Iteration count ${myInstance.getIterations() + 1}
+		`);
+	}
 });
 
 myInstance.iterator();  // Start iterator
 myInstance.wait(2000);  // Pause iteration
 myInstance.resume();    // Restarts iterations
 ```
-

@@ -25,7 +25,7 @@ describe("Inbetween Time", () => {
     // Wait for the iterator to complete exactly one iteration
     await new Promise(resolve => setTimeout(resolve, 15));
     
-    expect(instance.getInterations()).toEqual(1);
+    expect(instance.getIterations()).toEqual(1);
   });
 
   test('Should pause and resume with wait()', async () => {
@@ -37,10 +37,10 @@ describe("Inbetween Time", () => {
     instance.iterator();
     await new Promise(resolve => setTimeout(resolve, 25));
     instance.wait(100);
-    const iterations = instance.getInterations();
-    expect(instance.getInterations()).toBe(iterations);
+    const iterations = instance.getIterations();
+    expect(instance.getIterations()).toBe(iterations);
     await new Promise(resolve => setTimeout(resolve, 110));
-    expect(instance.getInterations()).toBeGreaterThan(iterations);
+    expect(instance.getIterations()).toBeGreaterThan(iterations);
   });
 
   test('Should stop after completing all iterations', async () => {
@@ -51,7 +51,7 @@ describe("Inbetween Time", () => {
     });
     instance.iterator();
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(instance.getInterations()).toBe(3);
+    expect(instance.getIterations()).toBe(3);
   });
 
   test('Should adjust to a new count with setCount()', async () => {
@@ -64,7 +64,7 @@ describe("Inbetween Time", () => {
     await new Promise(resolve => setTimeout(resolve, 25));
     instance.setCount(3);
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(instance.getInterations()).toBe(3);
+    expect(instance.getIterations()).toBe(3);
   });
 
   test('Should call onComplete when finished', async () => {
@@ -100,30 +100,28 @@ describe("Inbetween Time", () => {
       timer: 10,
       method: () => {}
     });
-    expect(instance.getInterations()).toBe(0);
+    expect(instance.getIterations()).toBe(0);
     instance.iterator();
     instance.pause();
-    const currentCount = instance.getInterations();
+    const currentCount = instance.getIterations();
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(instance.getInterations()).toBe(currentCount);
+    expect(instance.getIterations()).toBe(currentCount);
   });
 
   test('resume() should start iterations again', async () => {
     const instance = inBetweenTime({
       count: 3,
       timer: 10,
-      method: () => {
-        console.log('abc');
-      }
+      method: () => {}
     });
-    expect(instance.getInterations()).toBe(0);
+    expect(instance.getIterations()).toBe(0);
     instance.iterator();
     instance.pause();
-    const currentCount = instance.getInterations();
+    const currentCount = instance.getIterations();
     await new Promise(resolve => setTimeout(resolve, 100));
     instance.resume();
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(instance.getInterations()).toBeGreaterThan(currentCount);
+    expect(instance.getIterations()).toBeGreaterThan(currentCount);
   });
 });
 
