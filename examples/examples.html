@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>In-Between Time Immutable Examples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -35,24 +39,29 @@
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-950">
 
   <div class="container">
-    <h2>Simple Animation</h2>
-    <p>A box moving from left to right.</p>
+    <h2 class="py-3 text-black dark:text-white">Simple Animation</h2>
+    <p class="py-3 text-black dark:text-white">A box moving from left to right.</p>
     <div id="simple-animation-box" class="box"></div>
   </div>
 
   <div class="container">
-    <h2>Complex Animation</h2>
-    <p>Multiple elements animated with different timings, demonstrating the use of multiple runners.</p>
+    <h2 class="py-3  text-black dark:text-white"">Complex Animation</h2>
+    <p class="py-3  text-black dark:text-white"">Multiple elements animated with different timings, demonstrating the use of multiple runners.</p>
     <div id="complex-animation-container" style="height: 100px; position: relative;"></div>
   </div>
 
   <div class="container">
-    <h2>Lerp Animation</h2>
-    <p>Demonstrates linear interpolation for smooth movement.</p>
+    <h2 class="py-3  text-black dark:text-white">Lerp Animation</h2>
+    <p class="py-3  text-black dark:text-white">Demonstrates linear interpolation for smooth movement.</p>
     <div id="lerp-animation-container" style="height: 50px; position: relative;"></div>
+  </div>
+
+  <div class="container">
+    <h2 class="py-3 text-black dark:text-white">Perlin Noise Animation</h2>
+    <p class="py-3 text-black dark:text-white">Generating a 2D Perlin noise pattern. <a href="./perlin-noise.html">View here</a>.</p>
   </div>
 
   <script type="module" src="examples.js"></script>

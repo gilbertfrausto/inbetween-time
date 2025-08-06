@@ -92,15 +92,8 @@ const lerpAnimationState = createIteratorState({
 });
 
 const runner = createRunner(lerpAnimationState);
-setTimeout(() => {
-  wait(runner, 3000);
-  console.log('test');
-}, 1000);
+const {dispatch} = runner;
 
-lerpContainer.addEventListener('mouseenter', () => {
-  runner.dispatch((state) => pause(state))
-});
-
-lerpContainer.addEventListener('mouseleave', () => {
-  runner.dispatch((state) => resume(state))
-});
+setTimeout(() => wait(runner, 3000), 1000);
+lerpContainer.addEventListener('mouseenter', () => dispatch(pause));
+lerpContainer.addEventListener('mouseleave', () => dispatch(resume));
