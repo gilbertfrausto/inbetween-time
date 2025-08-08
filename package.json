@@ -1,7 +1,7 @@
 {
   "name": "inbetween-time",
-  "version": "2.1.0",
-  "description": "Iteration tool Similar to Unity coroutine",
+  "version": "3.0.0",
+  "description": "Iteration tool similar to coroutines. Get the `setInterval()` with the performance of `requestAnimationFrame()` with a new modern roboust API",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "files": [
@@ -31,5 +31,14 @@
     "url": "https://github.com/gilbertfrausto/inbetween-time/issues"
   },
   "readmeFilename": "README.md",
-  "homepage": "https://github.com/gilbertfrausto/inbetween-time#readme"
+  "homepage": "https://github.com/gilbertfrausto/inbetween-time#readme",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+  }
 }
