@@ -1,4 +1,4 @@
-import { createIteratorState, createRunner, wait, pause, resume } from '../src/inbetween-time-immutable.js';
+import { createIteratorState, createRunner, wait, pause, resume } from '../../src/index.js';
 
 const Perlin = {
   noise: (function() {
