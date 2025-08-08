@@ -1,4 +1,4 @@
-<img width="2160" height="1046" alt="Image" src="https://github.com/user-attachments/assets/45fccd90-fd52-417d-9529-dc185ca45a1a" />
+<img width="2160" height="1046" alt="Image" src="https://inbetween-time.web.app/images/LOGO_3.0.0.png" />
 
 # Inbetween-time.js
 Iteration tool Similar to Unity coroutine. A tool used like you would get from `setInterval()` but with the perfomace of `requestAnimationFrame()`. With the the ability to programmatically pause the iterations and resume.
