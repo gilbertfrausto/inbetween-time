@@ -1,6 +1,6 @@
 {
   "name": "@gilbertfrausto/inbetween-time",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Iteration tool similar to coroutines. Get the `setInterval()` with the performance of `requestAnimationFrame()` with a new modern roboust API",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -10,7 +10,8 @@
     "README.md"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "test": "bun test",
